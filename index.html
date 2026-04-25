@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Benson | Data & BI Portfolio</title>
+  <meta name="description" content="Benson Babu - Business Intelligence Analyst portfolio focused on Power BI, SQL, Azure, reporting automation, and operational analytics." />
+  <title>Benson Babu | Business Intelligence Analyst</title>
+
   <style>
     :root {
       --bg: #07111f;
       --bg-soft: #0d1b2f;
-      --card: rgba(15, 31, 53, 0.84);
-      --card-border: rgba(148, 163, 184, 0.18);
+      --card: rgba(15, 31, 53, 0.86);
+      --card-strong: rgba(17, 34, 58, 0.96);
+      --border: rgba(148, 163, 184, 0.18);
       --text: #e5eefb;
       --muted: #94a3b8;
       --accent: #38bdf8;
       --accent-2: #22c55e;
-      --accent-soft: rgba(56, 189, 248, 0.12);
+      --accent-3: #a78bfa;
       --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
     }
 
@@ -31,8 +34,9 @@
     body {
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 34%),
-        radial-gradient(circle at 80% 10%, rgba(34, 197, 94, 0.12), transparent 28%),
+        radial-gradient(circle at 10% 0%, rgba(56, 189, 248, 0.18), transparent 32%),
+        radial-gradient(circle at 85% 12%, rgba(34, 197, 94, 0.12), transparent 28%),
+        radial-gradient(circle at 50% 100%, rgba(167, 139, 250, 0.12), transparent 28%),
         var(--bg);
       color: var(--text);
       line-height: 1.6;
@@ -103,7 +107,7 @@
       gap: 10px;
       padding: 8px 13px;
       border: 1px solid rgba(56, 189, 248, 0.22);
-      background: var(--accent-soft);
+      background: rgba(56, 189, 248, 0.12);
       border-radius: 999px;
       color: #bae6fd;
       font-size: 13px;
@@ -119,7 +123,7 @@
     }
 
     h1 {
-      font-size: clamp(46px, 7vw, 84px);
+      font-size: clamp(44px, 7vw, 82px);
       line-height: 0.95;
       letter-spacing: -0.075em;
       margin-bottom: 24px;
@@ -151,11 +155,12 @@
       font-weight: 700;
       font-size: 14px;
       border: 1px solid rgba(148, 163, 184, 0.22);
-      transition: transform 0.18s ease, background 0.18s ease;
+      transition: transform 0.18s ease, background 0.18s ease, border 0.18s ease;
     }
 
     .btn:hover {
       transform: translateY(-2px);
+      border-color: rgba(56, 189, 248, 0.5);
     }
 
     .btn.primary {
@@ -171,7 +176,7 @@
 
     .hero-card {
       background: linear-gradient(180deg, rgba(15, 31, 53, 0.94), rgba(15, 31, 53, 0.62));
-      border: 1px solid var(--card-border);
+      border: 1px solid var(--border);
       border-radius: 30px;
       box-shadow: var(--shadow);
       padding: 28px;
@@ -230,7 +235,7 @@
     }
 
     .section-head {
-      max-width: 760px;
+      max-width: 780px;
       margin-bottom: 34px;
     }
 
@@ -263,7 +268,7 @@
 
     .card {
       background: var(--card);
-      border: 1px solid var(--card-border);
+      border: 1px solid var(--border);
       border-radius: 24px;
       padding: 24px;
       box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
@@ -299,6 +304,7 @@
       font-size: 13px;
       margin-bottom: 12px;
       display: inline-block;
+      font-weight: 700;
     }
 
     .timeline {
@@ -317,6 +323,10 @@
       color: var(--accent);
       font-weight: 800;
       font-size: 14px;
+    }
+
+    .case-study {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.13), rgba(167, 139, 250, 0.10));
     }
 
     .contact-box {
@@ -382,11 +392,12 @@
 <body>
   <header>
     <div class="nav">
-      <a class="brand" href="#hero">Ben<span>.</span></a>
+      <a class="brand" href="#hero">Benson<span>.</span></a>
       <nav aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#case-study">Case Study</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -396,45 +407,48 @@
   <main>
     <section class="hero container" id="hero">
       <div>
-        <div class="eyebrow"><span class="dot"></span> Data, BI & reporting systems</div>
-        <h1>Ben<br><span>Data & BI Analyst</span></h1>
+        <div class="eyebrow"><span class="dot"></span> Business Intelligence • SQL • Power BI • Azure</div>
+        <h1>Benson Babu<br><span>Business Intelligence Analyst</span></h1>
         <p>
-          I build practical reporting, SQL, and automation solutions that help teams clean data,
-          reduce manual work, and make better operational decisions.
+          I design and optimize analytics systems that improve operational visibility,
+          reduce reporting delays, and support better decision-making across logistics,
+          HR, finance, and operations.
         </p>
         <div class="hero-actions">
-          <a class="btn primary" href="#projects">View projects</a>
-          <a class="btn secondary" href="#contact">Contact me</a>
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn secondary" href="#case-study">Read Case Study</a>
+          <a class="btn secondary" href="#contact">Contact Me</a>
         </div>
       </div>
 
       <aside class="hero-card" aria-label="Portfolio highlights">
-        <h3>Portfolio Snapshot</h3>
+        <h3>Impact Snapshot</h3>
         <div class="metrics">
           <div class="metric">
             <strong>200+</strong>
             <span>Dashboards designed or optimized</span>
           </div>
           <div class="metric">
-            <strong>SQL</strong>
-            <span>Reporting, ETL, and data modeling</span>
+            <strong>90%</strong>
+            <span>Refresh-time improvement through optimization</span>
           </div>
           <div class="metric">
-            <strong>Power BI</strong>
-            <span>Operational dashboards and insights</span>
+            <strong>$1.5M</strong>
+            <span>Monthly recovery enabled through automation</span>
           </div>
           <div class="metric">
-            <strong>Azure</strong>
-            <span>Cloud data tools and pipelines</span>
+            <strong>100%</strong>
+            <span>Workforce reporting accuracy improvement</span>
           </div>
         </div>
         <div class="stack-tags">
-          <span class="tag">SQL Server</span>
           <span class="tag">Power BI</span>
+          <span class="tag">SQL</span>
+          <span class="tag">DAX</span>
+          <span class="tag">Azure Data Lake</span>
           <span class="tag">Python</span>
-          <span class="tag">Azure SQL</span>
-          <span class="tag">SSIS</span>
-          <span class="tag">ADF</span>
+          <span class="tag">VBA</span>
+          <span class="tag">Tableau</span>
         </div>
       </aside>
     </section>
@@ -442,24 +456,25 @@
     <section class="container" id="about">
       <div class="section-head">
         <div class="section-kicker">About</div>
-        <h2>Focused on turning messy data into useful business systems.</h2>
+        <h2>Turning complex operational data into clear, reliable reporting systems.</h2>
         <p>
-          My work sits between business reporting, data engineering, and analytics. I enjoy building
-          clean SQL logic, reliable data flows, and dashboards that make complex operations easier to manage.
+          I work at the intersection of business intelligence, data analysis, and reporting automation.
+          My focus is building practical analytics solutions using SQL, Power BI, Excel, APIs, and cloud data tools
+          that help leaders monitor performance, improve data quality, and make faster decisions.
         </p>
       </div>
       <div class="grid">
         <div class="card">
-          <h3>Reporting systems</h3>
-          <p>Power BI dashboards, operational reporting, KPI tracking, and report optimization.</p>
+          <h3>Business Intelligence</h3>
+          <p>Power BI dashboards, KPI reporting, operational monitoring, executive summaries, and stakeholder-ready insights.</p>
         </div>
         <div class="card">
-          <h3>Data preparation</h3>
-          <p>SQL cleaning, staging tables, transformations, validation checks, and reusable queries.</p>
+          <h3>Data Quality & Integration</h3>
+          <p>SQL analysis, multi-source data integration, data validation, duplicate cleanup, and structured reporting logic.</p>
         </div>
         <div class="card">
-          <h3>Automation mindset</h3>
-          <p>Reducing manual reporting work with repeatable pipelines, scripts, and structured processes.</p>
+          <h3>Automation & Optimization</h3>
+          <p>Reducing manual reporting work, improving refresh performance, and moving heavy calculations into scalable backend logic.</p>
         </div>
       </div>
     </section>
@@ -467,32 +482,35 @@
     <section class="container" id="skills">
       <div class="section-head">
         <div class="section-kicker">Skills</div>
-        <h2>Tools I use to build data solutions.</h2>
-        <p>A simple view of the stack I use for reporting, modeling, automation, and cloud data work.</p>
+        <h2>Tools and strengths I bring to analytics work.</h2>
+        <p>A focused stack for building dashboards, automating reporting, cleaning data, and improving decision support.</p>
       </div>
       <div class="grid">
         <div class="card">
-          <h3>Databases & SQL</h3>
+          <h3>BI & Reporting</h3>
           <ul>
-            <li>SQL Server, Azure SQL</li>
-            <li>T-SQL queries, joins, CTEs, window functions</li>
-            <li>Stored procedures and reporting logic</li>
+            <li>Power BI dashboard development</li>
+            <li>DAX and data modeling</li>
+            <li>Operational KPI tracking</li>
+            <li>Executive-ready reporting</li>
           </ul>
         </div>
         <div class="card">
-          <h3>BI & analytics</h3>
+          <h3>Data & Automation</h3>
           <ul>
-            <li>Power BI dashboard design</li>
-            <li>Data modeling and measures</li>
-            <li>Operational and executive reporting</li>
+            <li>SQL analysis and reporting logic</li>
+            <li>Excel, VBA, and reporting automation</li>
+            <li>APIs, CSV, PDF, and flat-file data sources</li>
+            <li>Python for data workflows</li>
           </ul>
         </div>
         <div class="card">
-          <h3>Data engineering</h3>
+          <h3>Platforms</h3>
           <ul>
-            <li>ETL pipelines and staging patterns</li>
-            <li>SSIS and Azure Data Factory learning path</li>
-            <li>Python scripts for APIs and flat files</li>
+            <li>SQL Server and Azure Data Lake</li>
+            <li>Tableau and Google Data Studio</li>
+            <li>Workday, Oracle BI, SAP reporting exposure</li>
+            <li>Linux exposure: navigation and log review</li>
           </ul>
         </div>
       </div>
@@ -501,76 +519,174 @@
     <section class="container" id="projects">
       <div class="section-head">
         <div class="section-kicker">Projects</div>
-        <h2>Selected work and learning projects.</h2>
-        <p>These projects show how I approach real-world data problems: extract, clean, model, report, and improve.</p>
+        <h2>Selected analytics and data projects.</h2>
+        <p>These examples show how I approach data problems: understand the business need, clean and model the data, automate the workflow, and deliver usable reporting.</p>
       </div>
       <div class="grid">
         <article class="card wide">
           <span class="project-label">Featured project</span>
-          <h3>Gas Prices ETL Pipeline</h3>
+          <h3>Power BI Dashboard Optimization</h3>
           <p>
-            A SQL Server and Python project for extracting gas price data, loading it into staging tables,
-            cleaning it, and preparing it for analysis and reporting.
+            Optimized Power BI reporting by moving DAX-heavy calculations into SQL views and improving refresh design,
+            helping reduce dashboard load times and improve report usability.
           </p>
           <ul>
-            <li>Built extraction logic for flat files and API-style data sources.</li>
-            <li>Used SQL staging and final tables to separate raw data from business-ready data.</li>
-            <li>Practiced repeatable loading, validation, and troubleshooting patterns.</li>
+            <li>Reduced dashboard load times by approximately 10 minutes daily.</li>
+            <li>Cut refresh times by 90% through backend optimization and incremental refresh.</li>
+            <li>Improved scalability by shifting complex calculations to pre-aggregated SQL views.</li>
           </ul>
         </article>
+
         <article class="card">
-          <span class="project-label">In progress</span>
-          <h3>Data Warehouse Practice</h3>
-          <p>Dimensional modeling, fact/dimension design, and warehouse loading patterns using SQL Server.</p>
+          <span class="project-label">Operations analytics</span>
+          <h3>Logistics KPI Dashboards</h3>
+          <p>
+            Built dashboards tracking shipments, revenue, margin, carrier performance, and customer engagement to support operational leaders.
+          </p>
         </article>
+
         <article class="card">
-          <span class="project-label">In progress</span>
-          <h3>Stock Market Data Project</h3>
-          <p>Python-based data collection and analysis workflow for market news, symbols, and scanner research.</p>
+          <span class="project-label">Automation</span>
+          <h3>Collections Reporting Tool</h3>
+          <p>
+            Developed Excel/VBA reporting automation that integrated SAP aging data, invoice retrieval, account logs, and recovery tracking.
+          </p>
         </article>
+
+        <article class="card">
+          <span class="project-label">HR analytics</span>
+          <h3>Workforce Analytics Dashboards</h3>
+          <p>
+            Created HR reporting for headcount, turnover, time to fill, absence rate, diversity metrics, and workforce planning support.
+          </p>
+        </article>
+
+        <article class="card wide">
+          <span class="project-label">Learning project</span>
+          <h3>Gas Prices ETL Pipeline</h3>
+          <p>
+            Built an end-to-end data pipeline using Python and SQL Server to extract, clean, and load gas price data into structured tables for analysis and reporting.
+          </p>
+          <ul>
+            <li>Designed staging and final tables to separate raw and business-ready data.</li>
+            <li>Implemented repeatable ETL process for flat files and API-style sources.</li>
+            <li>Focused on data quality, validation, and troubleshooting workflows.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="container" id="case-study">
+      <div class="section-head">
+        <div class="section-kicker">Case Study</div>
+        <h2>Improving dashboard performance by moving logic closer to the data.</h2>
+        <p>A simple example of how I think through BI problems: diagnose the bottleneck, simplify the model, and make the reporting experience faster for users.</p>
+      </div>
+      <div class="grid">
+        <div class="card case-study">
+          <h3>Problem</h3>
+          <p>Power BI dashboards were slowed down by heavy DAX calculations and refresh logic, creating delays for users who needed daily operational visibility.</p>
+        </div>
+        <div class="card case-study">
+          <h3>Approach</h3>
+          <p>Reviewed report logic, identified calculations better handled in SQL, and shifted complex transformations into pre-aggregated SQL views.</p>
+        </div>
+        <div class="card case-study">
+          <h3>Result</h3>
+          <p>Reduced daily dashboard load time by 10 minutes and improved refresh performance by 90%, creating a faster and more scalable reporting experience.</p>
+        </div>
       </div>
     </section>
 
     <section class="container" id="experience">
       <div class="section-head">
         <div class="section-kicker">Experience</div>
-        <h2>Practical experience across BI, reporting, and data operations.</h2>
-        <p>Keep this section tied closely to your resume. Replace placeholders with your exact employer, title, and dates.</p>
+        <h2>Experience across logistics, HR, finance, and consulting analytics.</h2>
+        <p>Hands-on BI and analytics work across multiple business functions, with a focus on measurable operational impact.</p>
       </div>
+
       <div class="timeline">
         <div class="timeline-item card">
-          <div class="timeline-date">Current / Recent</div>
+          <div class="timeline-date">2022 – Present</div>
           <div>
-            <h3>Data & BI Analyst</h3>
-            <p>Designed and improved dashboards across operational areas, supported reporting accuracy, and helped automate manual data workflows.</p>
+            <h3>Business Intelligence Analyst — R+L Global Logistics</h3>
+            <p>
+              Build and manage Power BI dashboards integrating SQL, Azure Data Lake, APIs, and Excel data to support executive and operational reporting.
+            </p>
             <ul>
-              <li>Created and optimized dashboards for logistics, HR, finance, and operational reporting.</li>
-              <li>Used SQL and Power BI to improve data visibility and reporting consistency.</li>
-              <li>Worked on data quality improvements, duplicate cleanup, and repeatable reporting processes.</li>
+              <li>Manage 50+ active Power BI dashboards while maintaining nearly 200 total dashboards.</li>
+              <li>Reduced dashboard load times by 10 minutes daily and cut refresh times by 90%.</li>
+              <li>Saved 1+ hour daily through reporting automation and multi-source data consolidation.</li>
+              <li>Developed dashboards for shipment timing, carrier performance, revenue, margin, and sales activity.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item card">
+          <div class="timeline-date">2020 – 2022</div>
+          <div>
+            <h3>Senior Data Analyst — Siemens Gamesa Renewable Energy</h3>
+            <p>
+              Supported HR reporting and workforce analytics across North America and LATAM using Workday, Oracle BI, Excel, and Power BI.
+            </p>
+            <ul>
+              <li>Improved workforce reporting accuracy by 100% by resolving data sync issues across systems.</li>
+              <li>Built dashboards tracking headcount, turnover, time to fill, absence rate, and diversity metrics.</li>
+              <li>Supported workforce planning, compliance reporting, and recruiting strategy.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item card">
+          <div class="timeline-date">2018 – 2019</div>
+          <div>
+            <h3>Senior Business Analyst — Actiknow Business Consulting</h3>
+            <p>
+              Developed analytics solutions and gathered requirements for clients across manufacturing, retail, and financial services.
+            </p>
+            <ul>
+              <li>Built financial, inventory, and store performance dashboards using BI tools.</li>
+              <li>Integrated data from Excel, CSV, PDFs, APIs, and SQL databases.</li>
+              <li>Documented business process flows and reporting requirements.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item card">
+          <div class="timeline-date">2011 – 2018</div>
+          <div>
+            <h3>Business Analyst — Genpact</h3>
+            <p>
+              Supported accounts receivable analytics and reporting for a $2M+ portfolio across 250+ accounts.
+            </p>
+            <ul>
+              <li>Recovered $1.5M monthly by automating SAP aging data, invoice retrieval, and account logs.</li>
+              <li>Reduced customer response time by 40% through process automation.</li>
+              <li>Saved 400+ labor hours through SAP research, invoice, email, and action-log automation.</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="container" id="certifications">
+    <section class="container" id="education">
       <div class="section-head">
-        <div class="section-kicker">Learning & certifications</div>
-        <h2>Continuous learning in cloud data and analytics.</h2>
-        <p>Add only certifications you already have or are actively preparing for.</p>
+        <div class="section-kicker">Education & Training</div>
+        <h2>Analytics foundation with ongoing technical development.</h2>
+        <p>Formal business analytics training combined with practical BI, SQL, and data automation experience.</p>
       </div>
       <div class="grid">
         <div class="card">
-          <h3>Azure Database Associate</h3>
-          <p>Currently studying database administration, cloud database concepts, and Azure data services.</p>
+          <h3>Post-Graduate Program</h3>
+          <p>Business Analytics and BI — Great Lakes Institute of Management</p>
         </div>
         <div class="card">
-          <h3>Azure Data Factory</h3>
-          <p>Learning cloud-based orchestration, pipeline design, and data movement patterns.</p>
+          <h3>Bachelor’s Degree</h3>
+          <p>Business & Finance — University of Delhi</p>
         </div>
         <div class="card">
-          <h3>Advanced SQL</h3>
-          <p>Practicing CTEs, subqueries, window functions, stored procedures, and performance-aware querying.</p>
+          <h3>Additional Training</h3>
+          <p>IBM Data Science Specialization and Power BI Data Analyst Associate.</p>
         </div>
       </div>
     </section>
@@ -580,19 +696,19 @@
         <div class="section-kicker">Contact</div>
         <h2>Let’s build better reporting systems.</h2>
         <p>
-          Open to BI Analyst, Data Analyst, Reporting Analyst, Database Analyst, and entry-to-mid level data engineering opportunities.
+          Open to BI Analyst, Data Analyst, Reporting Analyst, Business Analyst, and data-focused roles where analytics improves operational decisions.
         </p>
         <div class="hero-actions" style="justify-content:center;">
-          <a class="btn primary" href="mailto:your.email@example.com">Email me</a>
-          <a class="btn secondary" href="#">LinkedIn</a>
-          <a class="btn secondary" href="#">GitHub</a>
+          <a class="btn primary" href="mailto:benson2babu@gmail.com">Email Me</a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/babubenson" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn secondary" href="https://github.com/bben90" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    © 2026 Ben. Built with HTML, CSS, and GitHub Pages.
+    © 2026 Benson Babu. Built with HTML, CSS, and GitHub Pages.
   </footer>
 </body>
 </html>
