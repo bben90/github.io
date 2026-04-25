@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ben | Data & BI Portfolio</title>
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0d1b2f;
+      --card: rgba(15, 31, 53, 0.84);
+      --card-border: rgba(148, 163, 184, 0.18);
+      --text: #e5eefb;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-2: #22c55e;
+      --accent-soft: rgba(56, 189, 248, 0.12);
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 34%),
+        radial-gradient(circle at 80% 10%, rgba(34, 197, 94, 0.12), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 17, 31, 0.78);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    .nav {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 22px;
+    }
+
+    .hero {
+      min-height: 88vh;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 44px;
+      padding: 88px 22px 70px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 13px;
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      background: var(--accent-soft);
+      border-radius: 999px;
+      color: #bae6fd;
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent-2);
+      box-shadow: 0 0 18px rgba(34, 197, 94, 0.8);
+    }
+
+    h1 {
+      font-size: clamp(46px, 7vw, 84px);
+      line-height: 0.95;
+      letter-spacing: -0.075em;
+      margin-bottom: 24px;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 650px;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 14px;
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, #38bdf8, #22c55e);
+      color: #04111f;
+      border: 0;
+    }
+
+    .btn.secondary {
+      background: rgba(15, 31, 53, 0.66);
+      color: var(--text);
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(15, 31, 53, 0.94), rgba(15, 31, 53, 0.62));
+      border: 1px solid var(--card-border);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .hero-card h3 {
+      font-size: 18px;
+      margin-bottom: 18px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .metric {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(7, 17, 31, 0.64);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 26px;
+      line-height: 1.1;
+      color: var(--text);
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .stack-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      font-size: 13px;
+      color: #cbd5e1;
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.09);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    section {
+      padding: 86px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .section-kicker {
+      color: var(--accent-2);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -0.055em;
+      margin-bottom: 15px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .card ul {
+      padding-left: 18px;
+      margin-top: 14px;
+    }
+
+    .card li + li {
+      margin-top: 8px;
+    }
+
+    .wide {
+      grid-column: span 2;
+    }
+
+    .project-label {
+      color: #bae6fd;
+      font-size: 13px;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 26px;
+      align-items: start;
+    }
+
+    .timeline-date {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .contact-box {
+      text-align: center;
+      padding: 52px 26px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.16), rgba(34, 197, 94, 0.12));
+      border: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto 24px;
+    }
+
+    footer {
+      padding: 32px 22px;
+      color: var(--muted);
+      text-align: center;
+      border-top: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    @media (max-width: 860px) {
+      nav {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 60px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .wide {
+        grid-column: span 1;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="#hero">Ben<span>.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container" id="hero">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Data, BI & reporting systems</div>
+        <h1>Ben<br><span>Data & BI Analyst</span></h1>
+        <p>
+          I build practical reporting, SQL, and automation solutions that help teams clean data,
+          reduce manual work, and make better operational decisions.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">View projects</a>
+          <a class="btn secondary" href="#contact">Contact me</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Portfolio highlights">
+        <h3>Portfolio Snapshot</h3>
+        <div class="metrics">
+          <div class="metric">
+            <strong>200+</strong>
+            <span>Dashboards designed or optimized</span>
+          </div>
+          <div class="metric">
+            <strong>SQL</strong>
+            <span>Reporting, ETL, and data modeling</span>
+          </div>
+          <div class="metric">
+            <strong>Power BI</strong>
+            <span>Operational dashboards and insights</span>
+          </div>
+          <div class="metric">
+            <strong>Azure</strong>
+            <span>Cloud data tools and pipelines</span>
+          </div>
+        </div>
+        <div class="stack-tags">
+          <span class="tag">SQL Server</span>
+          <span class="tag">Power BI</span>
+          <span class="tag">Python</span>
+          <span class="tag">Azure SQL</span>
+          <span class="tag">SSIS</span>
+          <span class="tag">ADF</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="container" id="about">
+      <div class="section-head">
+        <div class="section-kicker">About</div>
+        <h2>Focused on turning messy data into useful business systems.</h2>
+        <p>
+          My work sits between business reporting, data engineering, and analytics. I enjoy building
+          clean SQL logic, reliable data flows, and dashboards that make complex operations easier to manage.
+        </p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>Reporting systems</h3>
+          <p>Power BI dashboards, operational reporting, KPI tracking, and report optimization.</p>
+        </div>
+        <div class="card">
+          <h3>Data preparation</h3>
+          <p>SQL cleaning, staging tables, transformations, validation checks, and reusable queries.</p>
+        </div>
+        <div class="card">
+          <h3>Automation mindset</h3>
+          <p>Reducing manual reporting work with repeatable pipelines, scripts, and structured processes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="skills">
+      <div class="section-head">
+        <div class="section-kicker">Skills</div>
+        <h2>Tools I use to build data solutions.</h2>
+        <p>A simple view of the stack I use for reporting, modeling, automation, and cloud data work.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>Databases & SQL</h3>
+          <ul>
+            <li>SQL Server, Azure SQL</li>
+            <li>T-SQL queries, joins, CTEs, window functions</li>
+            <li>Stored procedures and reporting logic</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>BI & analytics</h3>
+          <ul>
+            <li>Power BI dashboard design</li>
+            <li>Data modeling and measures</li>
+            <li>Operational and executive reporting</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Data engineering</h3>
+          <ul>
+            <li>ETL pipelines and staging patterns</li>
+            <li>SSIS and Azure Data Factory learning path</li>
+            <li>Python scripts for APIs and flat files</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="projects">
+      <div class="section-head">
+        <div class="section-kicker">Projects</div>
+        <h2>Selected work and learning projects.</h2>
+        <p>These projects show how I approach real-world data problems: extract, clean, model, report, and improve.</p>
+      </div>
+      <div class="grid">
+        <article class="card wide">
+          <span class="project-label">Featured project</span>
+          <h3>Gas Prices ETL Pipeline</h3>
+          <p>
+            A SQL Server and Python project for extracting gas price data, loading it into staging tables,
+            cleaning it, and preparing it for analysis and reporting.
+          </p>
+          <ul>
+            <li>Built extraction logic for flat files and API-style data sources.</li>
+            <li>Used SQL staging and final tables to separate raw data from business-ready data.</li>
+            <li>Practiced repeatable loading, validation, and troubleshooting patterns.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="project-label">In progress</span>
+          <h3>Data Warehouse Practice</h3>
+          <p>Dimensional modeling, fact/dimension design, and warehouse loading patterns using SQL Server.</p>
+        </article>
+        <article class="card">
+          <span class="project-label">In progress</span>
+          <h3>Stock Market Data Project</h3>
+          <p>Python-based data collection and analysis workflow for market news, symbols, and scanner research.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container" id="experience">
+      <div class="section-head">
+        <div class="section-kicker">Experience</div>
+        <h2>Practical experience across BI, reporting, and data operations.</h2>
+        <p>Keep this section tied closely to your resume. Replace placeholders with your exact employer, title, and dates.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item card">
+          <div class="timeline-date">Current / Recent</div>
+          <div>
+            <h3>Data & BI Analyst</h3>
+            <p>Designed and improved dashboards across operational areas, supported reporting accuracy, and helped automate manual data workflows.</p>
+            <ul>
+              <li>Created and optimized dashboards for logistics, HR, finance, and operational reporting.</li>
+              <li>Used SQL and Power BI to improve data visibility and reporting consistency.</li>
+              <li>Worked on data quality improvements, duplicate cleanup, and repeatable reporting processes.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="certifications">
+      <div class="section-head">
+        <div class="section-kicker">Learning & certifications</div>
+        <h2>Continuous learning in cloud data and analytics.</h2>
+        <p>Add only certifications you already have or are actively preparing for.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>Azure Database Associate</h3>
+          <p>Currently studying database administration, cloud database concepts, and Azure data services.</p>
+        </div>
+        <div class="card">
+          <h3>Azure Data Factory</h3>
+          <p>Learning cloud-based orchestration, pipeline design, and data movement patterns.</p>
+        </div>
+        <div class="card">
+          <h3>Advanced SQL</h3>
+          <p>Practicing CTEs, subqueries, window functions, stored procedures, and performance-aware querying.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="contact">
+      <div class="contact-box">
+        <div class="section-kicker">Contact</div>
+        <h2>Let’s build better reporting systems.</h2>
+        <p>
+          Open to BI Analyst, Data Analyst, Reporting Analyst, Database Analyst, and entry-to-mid level data engineering opportunities.
+        </p>
+        <div class="hero-actions" style="justify-content:center;">
+          <a class="btn primary" href="mailto:your.email@example.com">Email me</a>
+          <a class="btn secondary" href="#">LinkedIn</a>
+          <a class="btn secondary" href="#">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Ben. Built with HTML, CSS, and GitHub Pages.
+  </footer>
+</body>
+</html>
